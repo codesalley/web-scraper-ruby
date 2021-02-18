@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'byebug'
-gem 'nokogiri'
+gem install 'pry'
+gem install 'nokogiri'
+gem install 'HTTParty'
