@@ -2,7 +2,7 @@
 
 # web-scraper-ruby
 
-CLI web scraper with user friendly interface, that allows users to scrap web pages for data and export it.
+CLI web scraper with a user-friendly interface, that allows users to scrap web pages for data and export them.
 
 ## Screenshot
 
@@ -14,9 +14,9 @@ CLI web scraper with user friendly interface, that allows users to scrap web pag
 
 ## Getting Started
 
-First ensure that you have ruby installed on your local machine. and follow steps to run program
+First, ensure that you have ruby installed on your local machine. and follow steps to run the program
 
-## Prequisites
+## Prerequisites
 
 Ruby installed on your local machine. Terminal or similar to execute the program.
 
@@ -40,7 +40,7 @@ To install those libraries, simply run ```gem install [gem-name]```
 
 ## Usage
 
-- cd into project by ``cd web-scraper-ruby``
+- cd into the project by ``cd web-scraper-ruby``
 - Execute in terminal like so ```scraper``` 
 
 ## Author
