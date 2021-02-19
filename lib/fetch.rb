@@ -6,7 +6,7 @@ class Fetch_Internet
     @uri = uri
   end
 
-  def get_data
+  def fetch_data
     response = URI.open(@uri)
     data = parse_data(response)
     data
@@ -26,7 +26,7 @@ class Fetch_local
     @extention = extension
   end
 
-  def get_data
+  def fetch_data
     response = File.open(@uri)
     data = parse_data(response)
     data

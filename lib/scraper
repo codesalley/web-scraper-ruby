@@ -23,7 +23,7 @@ when 'Internet URI'
   puts 'paste url in here'
   option = gets.chomp
   response = Fetch_Internet.new(option)
-  parsed_data = response.get_data
+  parsed_data = response.fetch_data
   return error if response.nil?
 
   search_data = Export.new(parsed_data)
@@ -87,7 +87,7 @@ when 'Local xml/html file'
   puts 'the extension of the file, [HTML   XML]'
   extension = gets.chomp
   response = Fetch_local.new(option, extension)
-  lta = response.get_data
+  lta = response.fetch_data
   local_ = Export.new(lta)
   local_data = local_.search_by_custom_input('ul li a p div header')
   print_options = ['Export to csv', 'Print to console']
