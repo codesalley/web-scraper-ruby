@@ -13,6 +13,7 @@ repo_name_list = ['Internet URI', 'Local xml/html file', 'quit']
 prompt = TTY::Prompt.new
 selected = prompt.select('Where are we scraping from? ?', repo_name_list)
 error = 'Check link 404'
+# rubocop:disable Lint/UselessAssignment
 option = ''
 extension = ''
 
