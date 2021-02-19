@@ -8,12 +8,14 @@ class Fetch_Internet
 
   def get_data
     response = URI.open(@uri)
-    parse_data(response)
+    data =  parse_data(response)
+    return data
 
   end
 
   def parse_data(data_to_parse)
     doc = Nokogiri::HTML(data_to_parse)
+    return  doc
   end
 
 end
@@ -26,7 +28,8 @@ class Fetch_local
 
   def get_data
     response = File.open(@uri)
-    return parse_data(response)
+    data =  parse_data(response)
+    return data
   end
 
   def parse_data(data_to_parse)

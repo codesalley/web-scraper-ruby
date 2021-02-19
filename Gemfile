@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 
-gem 'figlet', '~> 1.1'
+gem 'ruby_figlet'
 gem 'nokogiri'
 gem 'pry'
-gem 'tty-prompt', '~> 0.23.0'
+gem 'tty-prompt'

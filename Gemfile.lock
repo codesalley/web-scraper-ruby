@@ -2,7 +2,6 @@ GEM
   remote: https://rubygems.org/
   specs:
     coderay (1.1.3)
-    figlet (1.1.0)
     method_source (1.0.0)
     nokogiri (1.11.1-arm64-darwin)
       racc (~> 1.4)
@@ -14,6 +13,7 @@ GEM
       coderay (~> 1.1)
       method_source (~> 1.0)
     racc (1.5.2)
+    ruby_figlet (0.6.1)
     tty-color (0.6.0)
     tty-cursor (0.7.1)
     tty-prompt (0.23.0)
@@ -30,10 +30,10 @@ PLATFORMS
   universal-darwin-20
 
 DEPENDENCIES
-  figlet (~> 1.1)
   nokogiri
   pry
-  tty-prompt (~> 0.23.0)
+  ruby_figlet
+  tty-prompt
 
 BUNDLED WITH
    2.2.9
