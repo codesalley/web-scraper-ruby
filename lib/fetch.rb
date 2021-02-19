@@ -28,7 +28,7 @@ class Fetch_local
 
   def get_data
     response = File.open(@uri)
-    data =  parse_data(response)
+    data = parse_data(response)
     data
   end
 
@@ -36,12 +36,9 @@ class Fetch_local
     if @extention == 'HTML'
       doc = Nokogiri::HTML(data_to_parse)
       doc
-    elsif @extention == "XML"
+    elsif @extention == 'XML'
       doc = Nokogiri::XML(data_to_parse)
       doc
     end
-
   end
-
 end
-
