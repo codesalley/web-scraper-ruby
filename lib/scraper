@@ -1,3 +1,22 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
-puts "Hello!"
+require 'tty-prompt'
+
+repo_name_list = ['Internet URI', 'Local xml/html file']
+prompt = TTY::Prompt.new
+selected = prompt.select('Which repos would you like to clone locally?', repo_name_list)
+
+option = nil
+
+case selected
+when 'Internet URI'
+  puts 'paste url in here'
+  option = gets.chomp
+when 'Local xml/html file'
+  puts 'paste path to file in here'
+  option = gets.chomp
+end
+
+
+p option
