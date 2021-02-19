@@ -5,24 +5,22 @@ require_relative '../lib/fetch'
 require_relative '../lib/export'
 require 'ruby_figlet'
 
-
 using RubyFiglet
 moo = "salley \n web Scraper"
 puts moo.art
-
 
 repo_name_list = ['Internet URI', 'Local xml/html file', 'quit']
 prompt = TTY::Prompt.new
 selected = prompt.select('Where are we scraping from? ?', repo_name_list)
 error = 'Check link 404'
-option = nil
-extension = nil
+option = ''
+extension = ''
 
 case selected
 when 'Internet URI'
   puts 'paste url in here'
   option = gets.chomp
-  response = Fetch_Internet.new(option)
+  response = FetchInternet.new(option)
   parsed_data = response.fetch_data
   return error if response.nil?
 
@@ -86,7 +84,7 @@ when 'Local xml/html file'
   option = gets.chomp
   puts 'the extension of the file, [HTML   XML]'
   extension = gets.chomp
-  response = Fetch_local.new(option, extension)
+  response = Fetchlocal.new(option, extension)
   lta = response.fetch_data
   local_ = Export.new(lta)
   local_data = local_.search_by_custom_input('ul li a p div header')

@@ -1,7 +1,7 @@
 require 'open-uri'
 require 'Nokogiri'
 
-class Fetch_Internet
+class FetchInternet
   def initialize(uri)
     @uri = uri
   end
@@ -10,17 +10,15 @@ class Fetch_Internet
     response = URI.open(@uri)
     data = parse_data(response)
     data
-
   end
 
   def parse_data(data_to_parse)
     doc = Nokogiri::HTML(data_to_parse)
     doc
   end
-
 end
 
-class Fetch_local
+class Fetchlocal
   def initialize(uri, extension)
     @uri = uri
     @extention = extension
