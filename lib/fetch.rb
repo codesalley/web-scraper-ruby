@@ -9,13 +9,13 @@ class Fetch_Internet
   def get_data
     response = URI.open(@uri)
     data = parse_data(response)
-    return data
+    data
 
   end
 
   def parse_data(data_to_parse)
     doc = Nokogiri::HTML(data_to_parse)
-    return  doc
+    doc
   end
 
 end
@@ -29,14 +29,16 @@ class Fetch_local
   def get_data
     response = File.open(@uri)
     data =  parse_data(response)
-    return data
+    data
   end
 
   def parse_data(data_to_parse)
     if @extention == 'HTML'
-      return doc = Nokogiri::HTML(data_to_parse)
+      doc = Nokogiri::HTML(data_to_parse)
+      doc
     elsif @extention == "XML"
-      return doc = Nokogiri::XML(data_to_parse)
+      doc = Nokogiri::XML(data_to_parse)
+      doc
     end
 
   end

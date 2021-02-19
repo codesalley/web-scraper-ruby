@@ -8,7 +8,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/lib/export.rb" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/lib/export.rb" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/lib/scraper" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/README.md" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/lib/fetch.rb" root0="SKIP_INSPECTION" />
@@ -47,7 +47,7 @@
       <option name="presentableId" value="Default" />
       <updated>1613660952872</updated>
       <workItem from="1613660961619" duration="3063000" />
-      <workItem from="1613730089543" duration="18359000" />
+      <workItem from="1613730089543" duration="18609000" />
     </task>
     <servers />
   </component>
