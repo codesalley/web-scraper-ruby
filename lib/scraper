@@ -16,7 +16,7 @@ error = 'Check link 404'
 # rubocop:disable Lint/UselessAssignment
 option = ''
 extension = ''
-
+# rubocop:enable Lint/UselessAssignment
 case selected
 when 'Internet URI'
   puts 'paste url in here'
