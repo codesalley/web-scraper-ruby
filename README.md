@@ -54,7 +54,7 @@ To install those libraries, simply run ```gem install [gem-name]```
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/sergiocortessat/RubyCapstone/issues).
+Feel free to check the [issues page](https://github.com/juxsalley/web-scraper-ruby/pull/1).
 
 ## Show your support
 

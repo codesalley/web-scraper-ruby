@@ -8,7 +8,7 @@ class Fetch_Internet
 
   def get_data
     response = URI.open(@uri)
-    data =  parse_data(response)
+    data = parse_data(response)
     return data
 
   end

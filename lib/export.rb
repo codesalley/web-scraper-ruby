@@ -1,8 +1,9 @@
-# frozen_string_literal: true
-
 require 'open-uri'
 require 'Nokogiri'
 require 'csv'
+
+# search and exports data
+
 class Export
   def initialize(data)
     @parsed_data = data
@@ -11,7 +12,7 @@ class Export
   def search_by_css(search_node)
     data_arr = []
     @parsed_data.css(search_node.to_s).each do |data|
-      data_arr << data.content.gsub(/\s+/, " ").strip
+      data_arr << data.content.gsub(/\s+/, ' ').strip
     end
     data_arr
   end
@@ -19,7 +20,7 @@ class Export
   def search_by_tags(search_node)
     data_arr = []
     @parsed_data.xpath(search_node).each do |data|
-      data_arr << data.content.gsub(/\s+/, " ").strip
+      data_arr << data.content.gsub(/\s+/, ' ').strip
     end
     data_arr
   end
@@ -27,7 +28,7 @@ class Export
   def search_by_custom_input(input)
     data_arr = []
     @parsed_data.search(input).each do |data|
-      data_arr << data.content.gsub(/\s+/, " ").strip
+      data_arr << data.content.gsub(/\s+/, ' ').strip
     end
     data_arr
   end
