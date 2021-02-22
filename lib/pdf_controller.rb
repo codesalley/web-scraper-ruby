@@ -2,7 +2,6 @@ require 'open-uri'
 require 'csv'
 require_relative '../lib/fetch'
 
-
 class PDFController
   def main_controller
     arr_of_pdf = []
