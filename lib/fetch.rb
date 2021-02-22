@@ -1,42 +1,34 @@
-require 'open-uri'
+require "HTTParty"
 require 'Nokogiri'
+require 'byebug'
 
 class FetchInternet
   def initialize(uri)
     @uri = uri
+
   end
 
   def fetch_data
-    response = URI.open(@uri)
-    data = parse_data(response)
-    data
+    my_hash = Hash.new('not found')
+    response = HTTParty.get(@uri)
+    data = parse_data(response.body)
+    data.xpath('//td//h2//a').each do |d|
+      my_hash[d.text] = d.attributes['href'].value
+    end
+    my_hash
+  end
+  def class_central
+    my_hash = Hash.new
+    response = HTTParty.get(@uri)
+    data = parse_data(response.body)
+    data.xpath('//table//tbody//tr//td//a//span').each_with_index do |ele, index|
+      my_hash[data.xpath('//table//tbody//tr//td//a//span')[index].text.gsub(/\s+/, " ").strip] =  data.css('div.truncate')[index.to_i].text.gsub(/\s+/, " ").strip if !data.css('div.truncate')[index.to_i].nil?
+    end
+    my_hash
   end
 
   def parse_data(data_to_parse)
     doc = Nokogiri::HTML(data_to_parse)
     doc
-  end
-end
-
-class Fetchlocal
-  def initialize(uri, extension)
-    @uri = uri
-    @extention = extension
-  end
-
-  def fetch_data
-    response = File.open(@uri)
-    data = parse_data(response)
-    data
-  end
-
-  def parse_data(data_to_parse)
-    if @extention == 'HTML'
-      doc = Nokogiri::HTML(data_to_parse)
-      doc
-    elsif @extention == 'XML'
-      doc = Nokogiri::XML(data_to_parse)
-      doc
-    end
   end
 end

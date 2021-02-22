@@ -2,7 +2,7 @@
 
 # web-scraper-ruby
 
-CLI web scraper with a user-friendly interface, that allows users to scrap web pages for data and export them.
+CLI web scraper, fetch pdf and course details from ``https://www.computer-pdf.com/`` and ``https://www.classcentral.com/``
 
 ## Screenshot
 
@@ -24,9 +24,10 @@ Ruby installed on your local machine. Terminal or similar to execute the program
 
 - nokogiri
 - tty-prompt
+- HTTParty
 - open-uri
 - ruby_figlet
-- 'pry'
+- byebug
 
 To install those libraries, simply run ```gem install [gem-name]```
 
@@ -41,6 +42,7 @@ To install those libraries, simply run ```gem install [gem-name]```
 ## Usage
 
 - cd into the project by ``cd web-scraper-ruby``
+- ``cd lib``
 - Execute in terminal like so ```scraper``` 
 
 ## Author
