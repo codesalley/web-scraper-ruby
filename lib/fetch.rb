@@ -20,7 +20,6 @@ class FetchInternet
   # rubocop:disable Layout/LineLength
   # rubocop:disable Style/NegatedIf
   # rubocop:disable Style/StringLiterals
-  # rubocop:disable Style/IfUnlessModifier
 
   def class_central
     my_hash = {}
@@ -40,4 +39,3 @@ end
 # rubocop:enable Layout/LineLength
 # rubocop:enable Style/NegatedIf
 # rubocop:enable Style/StringLiterals
-# rubocop:enable Style/IfUnlessModifier
