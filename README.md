@@ -43,7 +43,7 @@ To install those libraries, simply run ```gem install [gem-name]```
 
 - cd into the project by ``cd web-scraper-ruby``
 - ``cd bin``
-- Execute in terminal like so ```scraper``` 
+- Execute in terminal like so ```ruby scraper``` 
 
 ## Author
 
