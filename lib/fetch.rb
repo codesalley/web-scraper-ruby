@@ -1,4 +1,4 @@
-require "HTTParty"
+require 'HTTParty'
 require 'Nokogiri'
 require 'byebug'
 
@@ -17,6 +17,7 @@ class FetchInternet
     end
     my_hash
   end
+
   def class_central
     my_hash = Hash.new
     response = HTTParty.get(@uri)

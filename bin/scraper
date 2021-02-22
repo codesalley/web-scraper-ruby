@@ -32,5 +32,4 @@ when 'class central'
     puts 'Class central courses and providers'
     p "#{ele[0]} ---- #{ele[1]}"
   end
-
 end
