@@ -42,7 +42,7 @@ To install those libraries, simply run ```gem install [gem-name]```
 ## Usage
 
 - cd into the project by ``cd web-scraper-ruby``
-- ``cd bincd``
+- ``cd bin``
 - Execute in terminal like so ```scraper``` 
 
 ## Author
