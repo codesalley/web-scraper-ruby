@@ -45,6 +45,12 @@ To install those libraries, simply run ```gem install [gem-name]```
 - ``cd bin``
 - Execute in terminal like so ```ruby scraper``` 
 
+## To Test
+
+- After cloning the project run ``bundle install`` to install all required gems as instructed above 
+- Then ``bundle exec rspec `` to run the test
+
+
 ## Author
 
 👤 Iddrisu salley
