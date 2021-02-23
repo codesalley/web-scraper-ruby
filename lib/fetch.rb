@@ -1,3 +1,5 @@
+require 'HTTParty'
+require 'Nokogiri'
 require 'byebug'
 
 class FetchInternet
@@ -20,13 +22,11 @@ class FetchInternet
     response = HTTParty.get(@uri)
     data = parse_data(response.body)
     data.xpath('//table//tbody//tr//td//a//span').each_with_index do |_ele, index|
-      m_first = '//table//tbody//tr//td//a//span'
-      m_second = data.css('div.truncate')[index.to_i].text.gsub(/\s+/, ' ').strip
+      next if data.css('div.truncate')[index.to_i].nil?
 
-      unless data.css('div.truncate')[index.to_i].nil?
-        my_hash[data.xpath(m_first)[index].text.gsub(/\s+/, ' ').strip] =
-          m_second
-      end
+      my_hash[data.xpath('//table//tbody//tr//td//a//span')[index].text.gsub(/\s+/, ' ').strip] =
+        data.css('div.truncate')[index.to_i].text.gsub(/\s+/,
+                                                       ' ').strip
     end
     my_hash
   end
