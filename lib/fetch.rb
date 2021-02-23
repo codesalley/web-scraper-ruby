@@ -1,5 +1,3 @@
-require 'HTTParty'
-require 'Nokogiri'
 require 'byebug'
 
 class FetchInternet
@@ -25,13 +23,15 @@ class FetchInternet
       m_first = '//table//tbody//tr//td//a//span'
       m_second = data.css('div.truncate')[index.to_i].text.gsub(/\s+/, ' ').strip
 
-      my_hash[data.xpath(m_first)[index].text.gsub(/\s+/, " ").strip] = m_second unless data.css('div.truncate')[index.to_i].nil?
+      unless data.css('div.truncate')[index.to_i].nil?
+        my_hash[data.xpath(m_first)[index].text.gsub(/\s+/, ' ').strip] =
+          m_second
+      end
     end
     my_hash
   end
 
   def parse_data(data_to_parse)
-    doc = Nokogiri::HTML(data_to_parse)
-    doc
+    Nokogiri::HTML(data_to_parse)
   end
 end
