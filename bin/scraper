@@ -1,0 +1,34 @@
+#!/usr/bin/env ruby
+
+require 'tty-prompt'
+require_relative '../lib/fetch'
+require_relative '../lib/pdf_controller'
+require_relative '../lib/class_central'
+require 'ruby_figlet'
+
+using RubyFiglet
+
+moo = "web \n Scraper"
+puts moo.art
+
+name_list = ['programing free books', 'class central', 'quit']
+prompt = TTY::Prompt.new
+selected = prompt.select('Choose a website to scrape', name_list)
+case selected
+when 'programing free books'
+  row = []
+  pdf_controller = PDFController.new
+  pdf_data = pdf_controller.main_controller
+  puts 'Programming pdf and link to download. from'
+  puts pdf_data
+
+when 'class central'
+  row = []
+  courses_controller = CentralCourses.new
+  courses = courses_controller.fetch_course
+  courses.each do |ele|
+    row << [ele[0], ele[1]]
+    puts 'Class central courses and providers'
+    p "#{ele[0]} ---- #{ele[1]}"
+  end
+end
