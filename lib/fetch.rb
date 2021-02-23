@@ -17,10 +17,6 @@ class FetchInternet
     my_hash
   end
 
-  # rubocop:disable Layout/LineLength
-  # rubocop:disable Style/NegatedIf
-  # rubocop:disable Style/StringLiterals
-
   def class_central
     my_hash = {}
     response = HTTParty.get(@uri)
@@ -36,6 +32,3 @@ class FetchInternet
     doc
   end
 end
-# rubocop:enable Layout/LineLength
-# rubocop:enable Style/NegatedIf
-# rubocop:enable Style/StringLiterals
